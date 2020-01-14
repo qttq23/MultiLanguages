@@ -1,0 +1,7 @@
+
+void printHello();
+
+
+void printGoodbye();
+
+

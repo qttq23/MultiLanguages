@@ -1,0 +1,46 @@
+
+# version 5
+
+CC=g++
+
+LIBDIR=lib
+SRCDIR = src
+LODIR = $(LIBDIR)\obj
+SODIR = $(SRCDIR)\obj
+EXLIBS = -lm	# math library
+
+CFLAGS=-I$(LIBDIR)
+
+_DEPS = hello.h
+DEPS = $(patsubst %,$(LIBDIR)/%,$(_DEPS))
+
+
+_LOBJS = hello.o
+LOBJS = $(patsubst %,$(LODIR)/%,$(_LOBJS))
+
+_SOBJS = main.o
+SOBJS = $(patsubst %,$(SODIR)/%,$(_SOBJS))
+
+OUTDIR = bin
+NAME = $(OUTDIR)/main.exe
+
+
+$(LODIR)/%.o: $(LIBDIR)/%.cpp $(DEPS)
+	mkdir $(LODIR)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+$(SODIR)/%.o: $(SRCDIR)/%.cpp $(DEPS)
+	mkdir $(SODIR)
+	$(CC) -c -o $@ $< $(CFLAGS)
+	
+$(NAME): $(SOBJS) $(LOBJS)
+	$(CC) -o $@ $^ $(CFLAGS) $(EXLIBS)
+
+.PHONY: clean
+clean:
+	rmdir /q /s $(LODIR) $(SODIR)
+
+run:
+	$(NAME)
+
+
