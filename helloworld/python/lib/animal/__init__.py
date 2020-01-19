@@ -1,7 +1,7 @@
 
-from . import dog
+from animal import dog
 
-from . import cat
+from animal import cat
 
 
 

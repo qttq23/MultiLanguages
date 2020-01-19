@@ -1,7 +1,8 @@
 
 
-from . import io1
-from . import iotwice
+from iox import io1
+from iox import iotwice
+
 
 print('init iox')
 

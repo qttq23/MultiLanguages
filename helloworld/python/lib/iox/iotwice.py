@@ -1,10 +1,9 @@
 
-
-import iox.io1 as io
+from iox.io11 import io11
 
 def out(obj):
-	io.out('updated' + obj)
-	io.out(obj)
+	io11.out('updated' + obj)
+	io11.out(obj)
 
-
+io11.out('self print')
 
