@@ -1,0 +1,1 @@
+csc /lib:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2" /r:System.dll /r:System.Drawing.dll /r:System.Windows.Forms.dll  /out:bin\MyForm.exe src\Mainx.cs
