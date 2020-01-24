@@ -1,4 +1,5 @@
 
+
 package src;
 
 import java.util.*;
@@ -11,6 +12,13 @@ import java.awt.event.*;
 
 public class Mainx{
 	public static void main(String[] args){
+
+		// look and feel
+		try{
+		UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		}
+		catch(Exception ex){}
+		
 
 
 		// gui
