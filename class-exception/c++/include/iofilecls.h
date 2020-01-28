@@ -8,7 +8,7 @@ using namespace std;
 class iofilecls{
 
 public:
-	string read(string filename);
+	string read(string filename) throw (MyException);
 };
 
 

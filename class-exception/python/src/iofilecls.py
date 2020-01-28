@@ -1,4 +1,6 @@
 
+import logging
+
 class iofilecls:
 
 	def read(self, filename):
@@ -7,15 +9,24 @@ class iofilecls:
 			content = f.read()
 
 		except IOError:
-			raise Exception('io error occured')
+			raise IOError('io error occured')
 		finally:
 			try:
 				f.close()
 			except:
-				raise Exception('filenamee not found')
+				logging.error(f'{__name__} - cannot close file')
+				# raise FileNotFoundError('filename not found')
+				raise MyException('filename not found')
 
 
 		print('end of func')
 		return content
+
+
+class MyException(Exception):
+
+	def __init__(self, msg):
+		self.msg = msg
+		self.msg2 = msg
 
 

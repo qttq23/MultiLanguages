@@ -39,9 +39,6 @@ int main(){
 		try{
 			io2.out(iof.read("thang2.txt"));
 		}
-		catch(const char* ex){
-			io2.out(ex);
-		}
 		catch(MyException& ex){
 			io2.out(ex.what());
 		}

@@ -20,13 +20,16 @@ sys.path.append('lib')
 # # print(iofilex.filex.read('readme.txt'))
 # print(iofilex.filex.lines(fname))
 
+# log
+import logging
+logging.basicConfig(format='%(asctime)s %(levelname)s %(message)s', level=logging.DEBUG, datefmt='%m/%d/%Y %I:%M:%S %p', filename='log.txt')
 
-
+# console io
 from iocls import *
 x = iocls()
 x.out(x.msg)
 
-
+# file io
 from iofilecls import *
 filer = iofilecls()
 
@@ -36,5 +39,8 @@ try:
 except Exception as e:
 	x.out(e)
 	x.out(' read fail.')
+	logging.error(f'{__name__} - {e}')
 else:
 	x.out('read done')
+
+
