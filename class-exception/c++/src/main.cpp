@@ -11,43 +11,45 @@ using namespace std;
 #include "iocls.h"
 #include "iofilecls.h"
 
+#include "A.h"
+#include "B.h"
 
 int main(){
 
-	// out("Hello thang, enter something");
-	// string fname = in("enter filename");
-	// string content = in("enter content");
-	// write(fname, content);
 
-	// writeLine(fname, "this is new content");
+	// {
+	// 	// iocls* io = new iocls();
+	// 	// io->out("Hello from io class");
 
-	// // out(read(fname));
-	// vector<string> multi = lines(fname);
-	// for(int i = 0; i < multi.size(); i++){
-	// 	out(multi[i]);
-	// }
-
-	{
-		// iocls* io = new iocls();
-		// io->out("Hello from io class");
-
-		iocls io2;
-		io2.out("Hello from io class 2");
+	// 	iocls io2;
+	// 	io2.out("Hello from io class 2");
 		
 
-		iofilecls iof;
-		try{
-			io2.out(iof.read("thang2.txt"));
-		}
-		catch(MyException& ex){
-			io2.out(ex.what());
-		}
-		catch(...){
-			io2.out("unknown exception");
-		}
+	// 	iofilecls iof;
+	// 	try{
+	// 		io2.out(iof.read("thang2.txt"));
+	// 	}
+	// 	catch(MyException& ex){
+	// 		io2.out(ex.what());
+	// 	}
+	// 	catch(...){
+	// 		io2.out("unknown exception");
+	// 	}
+
+	// }
+	// out("out of section");
+
+	{
+		A a;
+		a.name = "school";
+		a.b = new B();
+		a.b->name = "student";
+
+		cout << a.name << endl;
+		cout << a.b->name << endl;
 
 	}
-	out("out of section");
+	out("out of test circle section");
 
 	return 0;
 }
