@@ -13,6 +13,8 @@ public:
 	string name;
 
 	B* b;
+
+	void dosth();
 };
 
 

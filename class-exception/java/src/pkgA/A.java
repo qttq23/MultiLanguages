@@ -6,7 +6,7 @@ public class A{
 
 	public String name;
 
-	public B b;
+	public B b = new B();
 
 	public void dosth(){
 		b.name = "thang";
